@@ -37,7 +37,8 @@ var config = {
         $('#employee-name-input').val("");
     role = $('#role-input').val().trim();
         $('#role-input').val("");
-    startDate = $('#start-input').val().trim(); 
+    startDate = Date.parse($('#start-input').val().trim()); 
+    console.log(startDate);
         $('#start-input').val("");
     monthlyRate = $('#rate-input').val().trim();
         $('#rate-input').val("");
@@ -62,13 +63,19 @@ var config = {
         var newDate = snapshot.val().startDate;
         var newRate = snapshot.val().monthlyRate;
         console.log( snapshot.val().employeeName );
+
+        var convertedDate = moment(newDate);
+        var monthsWorked = moment(moment()).diff(convertedDate , "months");
+        console.log("months worked: " + monthsWorked);
+        var billed = monthsWorked * newRate;
+
         $("table tbody").append(`<tr>
         <td>${newName}</td>
         <td>${newRole}</td>
         <td>${newDate}</td>
-        <td>Months Worked</td>
+        <td>${monthsWorked}</td>
         <td>${newRate}</td>
-        <td>Total Billed</td>
+        <td>${billed}</td>
         </tr>`);
     });
 
