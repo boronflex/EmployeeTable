@@ -1,69 +1,105 @@
-
-
 <!DOCTYPE html>
-<html>
 
+<html lang="en-us">
 
-<head>
-	<title></title>
+  <head>
 
-	<!-- jQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Employee Tracker</title>
 
-    <!-- Bootstrap CDN-->
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-     <!-- Firebase Reference -->
-    <script src="https://www.gstatic.com/firebasejs/3.7.1/firebase.js"></script>
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
 
+    <!-- Moment.js Reference -->
+    <!-- <script src="http://momentjs.com/downloads/moment.js"></script>   -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
-</head>
+  </head>
 
-<body>
+  <body>
 
-	 <!-- Jumbotron Title -->
-      <div class="jumbotron">
-        <h1 class="text-center">Employee Management Data</h1>
-        <h3 class="text-center">A Comprehensive Directory of Employee Data</h3>
+    <!-- Employee Tracker -->
+    <div class="container">
+
+      <!-- Jumbotron -->
+      <div class="jumbotron" style="background-color: black; color: white">
+        <h1 class="text-center">Employee Data Management</h1>
+        <h3 class="text-center">A Comprehensive Directory of Employee Billable Hours</h3>
       </div>
 
-
-<!-- Make Your Bid -->
       <div class="row">
+
         <div class="col-lg-12">
-          <div class="panel panel-default">
+
+        <!-- Current Employees-->
+          <div class="panel panel-primary">
             <div class="panel-heading">
-              <h3 class="panel-title">Make Your Bid</h3>
+              <h3 class="panel-title"><strong>Current Employees</strong></h3>
             </div>
             <div class="panel-body">
-              <form>
-                <div class="form-group">
-                  <label for="bidder-name">Your Name</label>
-                  <input class="form-control" id="bidder-name" type="text">
-                </div>
-                <div class="form-group">
-                  <label for="bidder-price">Your Price</label>
-                  <input class="form-control" id="bidder-price" type="number">
-                </div>
-                <button class="btn btn-primary" id="submit-bid" type="submit">Submit</button>
-              </form>
+              <table class="table table-hover" id='employee-table'>
+                <thead>
+                  <tr>
+                    <th>Employee Name</th>
+                    <th>Role</th>
+                    <th>Start Date</th>
+                    <th>Months Worked</th>
+                    <th>Monthly Rate ($)</th>
+                    <th>Total Billed ($)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
             </div>
           </div>
+
+          <!-- Add Employee  -->
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title"><strong>Add Employee</strong></h3>
+            </div>
+            <div class="panel-body">
+
+              <!-- Entry Form -->
+              <form>
+                <div class="form-group">
+                  <label for="employee-name-input">Employee Name</label>
+                  <input class="form-control" id="employee-name-input" type="text">
+                </div>
+                <div class="form-group">
+                  <label for="role-input">Role</label>
+                  <input class="form-control" id="role-input" type="text">
+                </div>
+                <div class="form-group">
+                  <label for="start-input">Start Date (DD/MM/YY - ex: 01/01/89)</label>
+                  <input class="form-control" id="start-input" type="text">
+                </div>
+                <div class="form-group">
+                  <label for="rate-input">Monthly Rate</label>
+                  <input class="form-control" id="rate-input" type="text">
+                </div>
+                <button class="btn btn-primary" id="add-employee-btn" type="submit">Submit</button>
+              </form>
+
+            </div>
+
+          </div>
+
         </div>
 
       </div>
 
+    </div>
 
+    <!-- JavaScript -->
+    <script src="assets/javascript/employees.js"></script>
 
+  </body>
 
-
-
-
-
-
-
-
-
-</body>
 </html>
