@@ -1,14 +1,13 @@
 // Initialize Firebase
-// Make sure to match the configuration to the script version number in the HTML
-// (Ex. 3.0 != 3.7.0)
 
-var config = {
-    apiKey: "AIzaSyCL3TIpe4rU6V7P6VX5-2lXPKyKKYaMHLo",
-    authDomain: "first-project-7d64a.firebaseapp.com",
-    databaseURL: "https://first-project-7d64a.firebaseio.com",
-    projectId: "first-project-7d64a",
-    storageBucket: "first-project-7d64a.appspot.com",
-    messagingSenderId: "69478572084"
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyB8vQGsKSlYIl-awwROxPnuWzyB6oRr5vc",
+    authDomain: "week7homework-deae3.firebaseapp.com",
+    databaseURL: "https://week7homework-deae3.firebaseio.com",
+    projectId: "week7homework-deae3",
+    storageBucket: "week7homework-deae3.appspot.com",
+    messagingSenderId: "535174173216"
   };
   firebase.initializeApp(config);
   // Assign the reference to the database to a variable named 'database'
@@ -25,7 +24,7 @@ var config = {
     </tr>`);
 */
 
-    var employeeName = "";
+  var employeeName = "";
   var role = "";
   var startDate = "";
   var monthlyRate = 0;
@@ -80,7 +79,6 @@ var config = {
     });
 
   });
-
 
 
  
